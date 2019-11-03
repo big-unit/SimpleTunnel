@@ -33,7 +33,7 @@ class SavedData {
 
 	/// Add a data blob and offset to the end of the list.
 	func append(_ data: Data, offset: Int) {
-		chain.append(data: data, offset: offset)
+        chain.append((data: data, offset: offset))
 	}
 
 	/// Write as much of the data in the list as possible to a stream
@@ -191,7 +191,7 @@ func writeData(_ data: Data, toStream stream: OutputStream, startingAtOffset off
 }
 
 /// Create a SimpleTunnel protocol message dictionary.
-public func createMessagePropertiesForConnection(_ connectionIdentifier: Int, commandType: TunnelCommand, extraProperties: [String: AnyObject] = [:]) -> [String: AnyObject] {
+public func createMessagePropertiesForConnection(_ connectionIdentifier: Int, commandType: TunnelCommand, extraProperties: [String: Any] = [:]) -> [String: Any] {
 	// Start out with the "extra properties" that the caller specified.
 	var properties = extraProperties
 
@@ -218,13 +218,13 @@ public enum SettingsKey: String {
 }
 
 /// Get a value from a plist given a list of keys.
-public func getValueFromPlist(_ plist: [NSObject: AnyObject], keyArray: [SettingsKey]) -> AnyObject? {
+public func getValueFromPlist(_ plist: [String: Any], keyArray: [SettingsKey]) -> Any? {
 	var subPlist = plist
 	for (index, key) in keyArray.enumerated() {
 		if index == keyArray.count - 1 {
-			return subPlist[key.rawValue as NSString]
+			return subPlist[key.rawValue]
 		}
-		else if let subSubPlist = subPlist[key.rawValue as NSString] as? [NSObject: AnyObject] {
+		else if let subSubPlist = subPlist[key.rawValue] as? [String: Any] {
 			subPlist = subSubPlist
 		}
 		else {

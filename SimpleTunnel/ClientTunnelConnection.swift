@@ -15,9 +15,9 @@ import NetworkExtension
 /// The delegate protocol for ClientTunnelConnection.
 protocol ClientTunnelConnectionDelegate {
 	/// Handle the connection being opened.
-	func tunnelConnectionDidOpen(_ connection: ClientTunnelConnection, configuration: [NSObject: AnyObject])
+	func tunnelConnectionDidOpen(_ connection: ClientTunnelConnection, configuration: [String: Any])
 	/// Handle the connection being closed.
-	func tunnelConnectionDidClose(_ connection: ClientTunnelConnection, error: NSError?)
+	func tunnelConnectionDidClose(_ connection: ClientTunnelConnection, error: Error?)
 }
 
 /// An object used to tunnel IP packets using the SimpleTunnel protocol.
@@ -47,7 +47,7 @@ class ClientTunnelConnection: Connection {
 		guard let clientTunnel = tunnel as? ClientTunnel else { return }
 
 		let properties = createMessagePropertiesForConnection(identifier, commandType: .open, extraProperties:[
-				TunnelMessageKey.TunnelType.rawValue: TunnelLayer.ip.rawValue as AnyObject
+				TunnelMessageKey.TunnelType.rawValue: TunnelLayer.ip
 			])
 
 		clientTunnel.sendMessage(properties) { error in
@@ -62,8 +62,8 @@ class ClientTunnelConnection: Connection {
 		guard let clientTunnel = tunnel as? ClientTunnel else { return }
 
 		let properties = createMessagePropertiesForConnection(identifier, commandType: .packets, extraProperties:[
-				TunnelMessageKey.Packets.rawValue: packets as AnyObject,
-				TunnelMessageKey.Protocols.rawValue: protocols as AnyObject
+				TunnelMessageKey.Packets.rawValue: packets,
+				TunnelMessageKey.Protocols.rawValue: protocols
 			])
 
 		clientTunnel.sendMessage(properties) { error in
@@ -89,14 +89,14 @@ class ClientTunnelConnection: Connection {
 	// MARK: Connection
 
 	/// Handle the event of the connection being established.
-	override func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [NSObject: AnyObject]) {
+	override func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [String: Any]) {
 		guard resultCode == .success else {
-			delegate.tunnelConnectionDidClose(self, error: SimpleTunnelError.badConnection as NSError)
+			delegate.tunnelConnectionDidClose(self, error: SimpleTunnelError.badConnection)
 			return
 		}
 
 		// Pass the tunnel network settings to the delegate.
-		if let configuration = properties[TunnelMessageKey.Configuration.rawValue as NSString] as? [NSObject: AnyObject] {
+		if let configuration = properties[TunnelMessageKey.Configuration.rawValue] as? [String: Any] {
 			delegate.tunnelConnectionDidOpen(self, configuration: configuration)
 		}
 		else {

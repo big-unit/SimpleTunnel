@@ -40,8 +40,8 @@ class ClientAppProxyConnection : Connection {
 		guard let clientTunnel = tunnel as? ClientTunnel else {
 			// Close the NEAppProxyFlow.
 			let error: SimpleTunnelError = .badConnection
-			appProxyFlow.closeReadWithError(error as NSError)
-			appProxyFlow.closeWriteWithError(error as NSError)
+			appProxyFlow.closeReadWithError(error)
+			appProxyFlow.closeWriteWithError(error)
 			return
 		}
 
@@ -57,11 +57,11 @@ class ClientAppProxyConnection : Connection {
 	}
 
 	/// Handle the result of sending a data message to the SimpleTunnel server.
-	func handleSendResult(_ error: NSError?) {
+	func handleSendResult(_ error: Error?) {
 	}
 
 	/// Handle errors that occur on the connection.
-	func handleErrorCondition(_ flowError: NEAppProxyErrorDomain? = nil, notifyServer: Bool = true) {
+    func handleErrorCondition(_ flowError: NEAppProxyFlowError.Code? = nil, notifyServer: Bool = true) {
 
 		guard !isClosedCompletely else { return }
 
@@ -98,7 +98,7 @@ class ClientAppProxyConnection : Connection {
 	// MARK: Connection
 
 	/// Handle the "Open Completed" message received from the SimpleTunnel server for this connection.
-	override func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [NSObject: AnyObject]) {
+	override func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [String: Any]) {
 		guard resultCode == .success else {
 			simpleTunnelLog("Failed to open \(identifier), result = \(resultCode)")
 			handleErrorCondition(.peerReset, notifyServer: false)
@@ -113,7 +113,7 @@ class ClientAppProxyConnection : Connection {
 
 		// Now that the SimpleTunnel connection is open, indicate that we are ready to handle data on the NEAppProxyFlow.
 		appProxyFlow.open(withLocalEndpoint: localAddress) { error in
-			self.handleSendResult(error as NSError?)
+			self.handleSendResult(error)
 		}
 	}
 
@@ -121,7 +121,7 @@ class ClientAppProxyConnection : Connection {
 		self.closeConnection(direction, flowError: nil)
 	}
 
-	func closeConnection(_ direction: TunnelConnectionCloseDirection, flowError: NEAppProxyErrorDomain?) {
+    func closeConnection(_ direction: TunnelConnectionCloseDirection, flowError: NEAppProxyFlowError.Code?) {
 		super.closeConnection(direction)
 
 		var error: NSError?
@@ -167,7 +167,7 @@ class ClientAppProxyTCPConnection : ClientAppProxyConnection {
 	}
 
 	/// Handle the result of sending a "Data" message to the SimpleTunnel server.
-	override func handleSendResult(_ error: NSError?) {
+	override func handleSendResult(_ error: Error?) {
 		if let sendError = error {
 			simpleTunnelLog("Failed to send Data Message to the Tunnel Server. error = \(sendError)")
 			handleErrorCondition(.hostUnreachable)
@@ -235,7 +235,7 @@ class ClientAppProxyUDPConnection : ClientAppProxyConnection {
 	}
 
 	/// Handle the result of sending a "Data" message to the SimpleTunnel server.
-	override func handleSendResult(_ error: NSError?) {
+	override func handleSendResult(_ error: Error?) {
 
 		if let sendError = error {
 			simpleTunnelLog("Failed to send message to Tunnel Server. error = \(sendError)")

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1563CE90236E685E001B6EFA /* SimpleTunnelServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01A16941A8A615F00BC9EFD /* SimpleTunnelServices.framework */; };
+		1563CE91236E68A8001B6EFA /* SimpleTunnelServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01A16941A8A615F00BC9EFD /* SimpleTunnelServices.framework */; };
+		1563CE92236E68AC001B6EFA /* SimpleTunnelServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01A16941A8A615F00BC9EFD /* SimpleTunnelServices.framework */; };
+		1563CE93236E68B0001B6EFA /* SimpleTunnelServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01A16941A8A615F00BC9EFD /* SimpleTunnelServices.framework */; };
+		1563CE94236E68BC001B6EFA /* SimpleTunnelServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01A16941A8A615F00BC9EFD /* SimpleTunnelServices.framework */; };
 		4408EBAB1B0C5C1F0011C5F9 /* UDPServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4408EBAA1B0C5C1F0011C5F9 /* UDPServerConnection.swift */; };
 		442B69341B06721300382B6D /* AppProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B69331B06721300382B6D /* AppProxyProvider.swift */; };
 		442B69361B06721E00382B6D /* ClientAppProxyConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B69351B06721E00382B6D /* ClientAppProxyConnection.swift */; };
@@ -15,7 +20,6 @@
 		720FCA981B057C7900B168EB /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FCA971B057C7900B168EB /* DataExtension.swift */; };
 		720FCAAA1B057C9400B168EB /* ControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FCAA91B057C9400B168EB /* ControlExtension.swift */; };
 		B01A16991A8A616000BC9EFD /* SimpleTunnelServices.h in Headers */ = {isa = PBXBuildFile; fileRef = B01A16981A8A616000BC9EFD /* SimpleTunnelServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B01A16AC1A8A616000BC9EFD /* SimpleTunnelServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B01A16941A8A615F00BC9EFD /* SimpleTunnelServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B07CCB3D1A8940E600A4F1E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CCB3C1A8940E600A4F1E5 /* AppDelegate.swift */; };
 		B0993D321A8A651800510E18 /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0993D311A8A651800510E18 /* Tunnel.swift */; };
 		B0993D341A8A654000510E18 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0993D331A8A654000510E18 /* Connection.swift */; };
@@ -133,7 +137,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B01A16AC1A8A616000BC9EFD /* SimpleTunnelServices.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1563CE93236E68B0001B6EFA /* SimpleTunnelServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1563CE91236E68A8001B6EFA /* SimpleTunnelServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1563CE92236E68AC001B6EFA /* SimpleTunnelServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1563CE94236E68BC001B6EFA /* SimpleTunnelServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1563CE90236E685E001B6EFA /* SimpleTunnelServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +290,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1563CE8F236E685E001B6EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		442B692B1B0671A100382B6D /* AppProxy */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +370,7 @@
 				720FCA961B057C7900B168EB /* FilterDataProvider */,
 				720FCAA81B057C9400B168EB /* FilterControlProvider */,
 				B07CCB381A8940E600A4F1E5 /* Products */,
+				1563CE8F236E685E001B6EFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -604,15 +620,18 @@
 				ORGANIZATIONNAME = "Apple Inc.";
 				TargetAttributes = {
 					442B69371B06724900382B6D = {
-            CreatedOnToolsVersion = 7.0;
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = Y28WQ9G7N2;
 						LastSwiftMigration = 0800;
 					};
 					720FCA941B057C7900B168EB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = Y28WQ9G7N2;
 						LastSwiftMigration = 0800;
 					};
 					720FCAA61B057C9400B168EB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = Y28WQ9G7N2;
 						LastSwiftMigration = 0800;
 					};
 					B01A16931A8A615F00BC9EFD = {
@@ -621,10 +640,12 @@
 					};
 					B07CCB361A8940E600A4F1E5 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = Y28WQ9G7N2;
 						LastSwiftMigration = 0800;
 					};
 					B07CCB6C1A89414500A4F1E5 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = Y28WQ9G7N2;
 						LastSwiftMigration = 0800;
 					};
 					B0993D3A1A8A6DBC00510E18 = {
@@ -637,6 +658,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -871,13 +893,13 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AppProxy/AppProxy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				INFOPLIST_FILE = AppProxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.AppProxy";
 				PRODUCT_MODULE_NAME = AppProxy;
 				PRODUCT_NAME = AppProxyProvider;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -886,13 +908,13 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AppProxy/AppProxy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				INFOPLIST_FILE = AppProxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.AppProxy";
 				PRODUCT_MODULE_NAME = AppProxy;
 				PRODUCT_NAME = AppProxyProvider;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -902,14 +924,14 @@
 				CODE_SIGN_ENTITLEMENTS = FilterDataProvider/DataFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterDataProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterDataProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.FilterDataProvider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -919,13 +941,13 @@
 				CODE_SIGN_ENTITLEMENTS = FilterDataProvider/DataFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterDataProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterDataProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.FilterDataProvider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -935,14 +957,14 @@
 				CODE_SIGN_ENTITLEMENTS = FilterControlProvider/ControlFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterControlProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterControlProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.FilterControlProvider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -952,13 +974,13 @@
 				CODE_SIGN_ENTITLEMENTS = FilterControlProvider/ControlFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterControlProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterControlProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.FilterControlProvider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -974,12 +996,12 @@
 				INFOPLIST_FILE = SimpleTunnelServices/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "-fapplication-extension";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnelServices";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnelServices";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -997,12 +1019,12 @@
 				INFOPLIST_FILE = SimpleTunnelServices/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "-fapplication-extension";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnelServices";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnelServices";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1049,6 +1071,7 @@
 				PLUGIN_NAME = AppTunnel;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv4t armv5 armv6 armv6m armv7 armv7em armv7f armv7m armv7s xscale";
 			};
@@ -1086,6 +1109,7 @@
 				PLUGIN_BUNDLE_ID = "com.apple.VPN-Development1.vpnplugin";
 				PLUGIN_NAME = AppTunnel;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv4t armv5 armv6 armv6m armv7 armv7em armv7f armv7m armv7s xscale";
@@ -1099,6 +1123,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SimpleTunnel/SimpleTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1107,11 +1132,10 @@
 				);
 				INFOPLIST_FILE = SimpleTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv4t armv5 armv6 armv6m armv7 armv7em armv7f armv7m armv7s xscale x86_64";
 			};
 			name = Debug;
@@ -1123,14 +1147,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SimpleTunnel/SimpleTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "VPNTYPE=\\\"$(PLUGIN_BUNDLE_ID)\\\"";
 				INFOPLIST_FILE = SimpleTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv4t armv5 armv6 armv6m armv7 armv7em armv7f armv7m armv7s xscale x86_64";
 			};
 			name = Release;
@@ -1140,12 +1164,12 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.PacketTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.PacketTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1154,12 +1178,12 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y28WQ9G7N2;
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.PacketTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lvv.apple-samplecode.SimpleTunnel.PacketTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

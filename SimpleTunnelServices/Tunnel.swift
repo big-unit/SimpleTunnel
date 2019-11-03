@@ -69,7 +69,7 @@ public enum AppProxyFlowKind: Int {
 public protocol TunnelDelegate: class {
 	func tunnelDidOpen(_ targetTunnel: Tunnel)
 	func tunnelDidClose(_ targetTunnel: Tunnel)
-	func tunnelDidSendConfiguration(_ targetTunnel: Tunnel, configuration: [String: AnyObject])
+	func tunnelDidSendConfiguration(_ targetTunnel: Tunnel, configuration: [String: Any])
 }
 
 /// The base class that implements common behavior and data structure for both sides of the SimpleTunnel protocol.
@@ -123,7 +123,7 @@ open class Tunnel: NSObject {
 		
 		savedData.clear()
 
-		if let index = Tunnel.allTunnels.index(where: { return $0 === self }) {
+        if let index = Tunnel.allTunnels.firstIndex(where: { return $0 === self }) {
 			Tunnel.allTunnels.remove(at: index)
 		}
 	}
@@ -153,7 +153,7 @@ open class Tunnel: NSObject {
     }
 
 	/// Serialize a message
-	func serializeMessage(_ messageProperties: [String: AnyObject]) -> Data? {
+	func serializeMessage(_ messageProperties: [String: Any]) -> Data? {
 		var messageData: NSMutableData?
 		do {
 			/*
@@ -178,7 +178,7 @@ open class Tunnel: NSObject {
 	}
 
 	/// Send a message on the tunnel connection.
-	func sendMessage(_ messageProperties: [String: AnyObject]) -> Bool {
+	func sendMessage(_ messageProperties: [String: Any]) -> Bool {
 		var written: Int = 0
 
         guard let messageData = serializeMessage(messageProperties) else {
@@ -350,7 +350,7 @@ open class Tunnel: NSObject {
 	}
 
 	/// Handle a recieved message.
-	func handleMessage(_ command: TunnelCommand, properties: [String: AnyObject], connection: Connection?) -> Bool {
+	func handleMessage(_ command: TunnelCommand, properties: [String: Any], connection: Connection?) -> Bool {
 		simpleTunnelLog("handleMessage called on abstract base class")
 		return false
 	}
